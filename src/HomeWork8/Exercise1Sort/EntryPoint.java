@@ -6,7 +6,7 @@ import java.util.List;
 public class EntryPoint {
     public static void main(String[] args) {
 
-       List<Integer> list = new ArrayList<>();
+        List<Integer> list = new ArrayList<>();
 
         list.add((int) Math.round((Math.random() * 100)));//0
         list.add((int) Math.round((Math.random() * 100)));//1
@@ -19,22 +19,22 @@ public class EntryPoint {
         list.add((int) Math.round((Math.random() * 100)));//8
         list.add((int) Math.round((Math.random() * 100)));//9
         System.out.println("Первоначальная коллекция:");
-        for (int l : list){
-            System.out.print(l+" ");
+        for (int l : list) {
+            System.out.print(l + " ");
         }
 
-        Integer[] array = list.toArray(new Integer[list.size()]);
-        int [] result = new int[array.length];
-        for (int i = 0; i < result.length; i++)
-            result[i] = array[i];
         System.out.println("\n");
 
         CoctailSort a = new CoctailSort();
-        a.doCoctailSort(result);
+        a.doCoctailSort(list);
         System.out.println("\n");
 
         InsertIntoSort b = new InsertIntoSort();
-        b.doInsertIntoSort(result);
+        b.doInsertIntoSort(list);
+        System.out.println("\n");
+
+        MassiveBilder c = new MassiveBilder();
+        c.doMassiveBilder(list);
 
     }
 
